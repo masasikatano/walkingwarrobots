@@ -1,0 +1,23 @@
+<h1>Weapon</h1>
+<h2><%= @weapon.name %></h2>
+<h3>Posts</h3>
+<ul>
+      <% @weaponPosts.each do |post|%>
+      <li><%= post.post %></li>
+      <% end %>
+</ul>
+<h3>Add New Post</h3>
+<%= form_for @weaponPost do |f| %>
+<p>
+    <%= f.label :post %><br>
+    <%= f.text_field :post %>
+</p>
+<p>
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
+</p>
+<p>
+    <%= f.hidden_field :weapon_id, :value => @weapon.id %>
+    <%= f.submit %>
+</p>
+<% end %>

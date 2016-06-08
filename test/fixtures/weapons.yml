@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  namejp: MyString
+  required_level: 1
+  price_ag: 1
+  price_au: 1
+  price_wsp: 1
+  weapon_class: MyString
+  weapon_type: MyString
+  damage: 1
+  damage_max: 1
+  hp: 1
+  hp_max: 1
+  shooting_range: MyString
+  rounds: MyString
+  rps: 1.5
+  reload_sec: 1.5
+  whole_rounds_sec: 1.5
+  cycle_sec: 1.5
+  cycle_damage: 1.5
+  cycle_damage_max: 1.5
+  cycle_dps: 1.5
+  cycle_dps_max: 1.5
+  note: MyText
+  rating: 1.5
+
+two:
+  name: MyString
+  namejp: MyString
+  required_level: 1
+  price_ag: 1
+  price_au: 1
+  price_wsp: 1
+  weapon_class: MyString
+  weapon_type: MyString
+  damage: 1
+  damage_max: 1
+  hp: 1
+  hp_max: 1
+  shooting_range: MyString
+  rounds: MyString
+  rps: 1.5
+  reload_sec: 1.5
+  whole_rounds_sec: 1.5
+  cycle_sec: 1.5
+  cycle_damage: 1.5
+  cycle_damage_max: 1.5
+  cycle_dps: 1.5
+  cycle_dps_max: 1.5
+  note: MyText
+  rating: 1.5

@@ -1,0 +1,13 @@
+<h1>Top Page</h1>
+<h2>Robots</h2>
+<ul>
+      <% @robots.each do |robot|%>
+      <li><%= link_to robot.name, robot_path(robot.id) %></li>
+      <% end %>
+</ul>
+<h3>Weapons</h3>
+<ul>
+      <% @weapons.each do |weapon|%>
+      <li><%= link_to weapon.name, weapon_path(weapon.id) %></li>
+      <% end %>
+</ul>

@@ -1,0 +1,2 @@
+module RobotPostHelper
+end

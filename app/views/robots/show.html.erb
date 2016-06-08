@@ -1,0 +1,28 @@
+<h1>Robot</h1>
+<h2><%= @robot.name %></h2>
+
+<h3>Posts</h3>
+<ul>
+      <% @robotPosts.each do |post|%>
+      <li><%= post.post %></li>
+      <% end %>
+</ul>
+
+<h3>Add New Post</h3>
+
+<%= form_for @robotPost do |f| %>
+
+<p>
+    <%= f.label :post %><br>
+    <%= f.text_field :post %>
+</p>
+<p>
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
+</p>
+<p>
+    <%= f.hidden_field :robot_id, :value => @robot.id %>
+    <%= f.submit %>
+</p>
+
+<% end %>

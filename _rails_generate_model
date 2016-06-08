@@ -1,0 +1,5 @@
+rails generate model robot name:string namejp:string required_level:integer price_ag:integer price_au:integer price_wsp:integer robot_class:string hp:integer hp_max:integer speed:integer speed_max:integer slot:string slot1:string slot2:string slot3:string slot4:string ability:string note:text rating:float
+rails generate model weapon name:string namejp:string required_level:integer price_ag:integer price_au:integer price_wsp:integer weapon_class:string weapon_type:string damage:integer damage_max:integer hp:integer hp_max:integer shooting_range:string rounds:string rps:float reload_sec:float whole_rounds_sec:float cycle_sec:float cycle_damage:float cycle_damage_max:float cycle_dps:float cycle_dps_max:float note:text rating:float
+
+rails generate model robotPost robot_id:integer rating:float post:text
+rails generate model weaponPost weapon_id:integer rating:float post:text
