@@ -1,13 +1,124 @@
-<h1>Top Page</h1>
-<h2>Robots</h2>
-<ul>
-      <% @robots.each do |robot|%>
-      <li><%= link_to robot.name, robot_path(robot.id) %></li>
-      <% end %>
-</ul>
-<h3>Weapons</h3>
-<ul>
-      <% @weapons.each do |weapon|%>
-      <li><%= link_to weapon.name, weapon_path(weapon.id) %></li>
-      <% end %>
-</ul>
+<% provide(:title, "TOPページ") %>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">WWRR - Walking War Robots Ranking</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">All ROBOTS</a></li>
+        <li><a href="#">All WEAPONS</a></li>
+    </ul>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<header class="img-responsive">
+      <h1>- WWRR -</h1>
+      <h2>Walking War Robots Ranking</h2>
+      <h2>ウォーキング ウォー ロボッツ ランキング</h2>
+</header>
+
+<section class="bs-example container">
+    <div class="table-responsive"> 
+        <table class="table table-inverse">
+            <caption>ROBOTS TOP 3</caption>
+            <thead>
+                <tr>
+                    <th width="20%">機体名</th>
+                    <th>HP最大</th>
+                    <th>SP最大</th>
+                    <th>スロット</th>
+                    <th>能力</th>
+                    <th>評価</th>
+                </tr>
+            </thead>
+            <tbody>
+            　　<% @robots.each do |robot|%>
+            　　<tr>
+                    <td style="background-image: url(/images/robots/t<%= robot.id %>.png);background-repeat: no-repeat;">
+                      <%= link_to robot.name, robot_path(robot.id) %><br>
+                      <%= robot.namejp %>
+                    </td>
+                    <td><%= number_with_delimiter(robot.hp_max) %></td>
+                    <td><%= number_with_delimiter(robot.speed_max) %>km</td>
+                    <td><%= robot.slot %></td>
+                    <td><%= robot.ability %></td>
+                    <td><%= robot.rating %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <p class="detail text-center"><%= link_to "すべてのロボットを見る", robots_path %></p>
+</section>
+
+<hr>
+
+<section class="bs-example container">
+    <div class="table-responsive"> 
+        <table class="table table-inverse">
+            <caption>WEAPONS TOP 3</caption>
+            <thead>
+                <tr>
+                    <th width="20%">武器名</th>
+                    <th>クラス</th>
+                    <th>ダメージ最大</th>
+                    <th>サイクルDPS最大</th>
+                    <th>評価</th>
+                </tr>
+            </thead>
+            <tbody>
+            　　<% @weapons.each do |weapon|%>
+            　　<tr>
+                    <td style="background-image: url(/images/weapons/t<%= weapon.id %>.png);background-repeat: no-repeat;">
+                      <%= link_to weapon.name, robot_path(weapon.id) %><br>
+                      <%= weapon.namejp %>
+                    </td>
+                    <td><%= weapon.weapon_class %></td>
+                    <td><%= weapon.damage_max %></td>
+                    <td><%= weapon.cycle_dps_max %></td>
+                    <td><%= weapon.rating %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <p class="detail text-center"><%= link_to "すべての武器を見る", weapons_path %></p>
+</section>
+
+<section class="promotion">
+    <div class="container">
+        <h2 class="text-center">Walking War Robots について</h2>
+        <hr>
+        
+        <p>Walking War Robots は6対6のチーム戦をリアルタイムで繰り広げる、アクション満載のマルチプレイヤーゲームです！</p>
+        <p>鋼鉄ロボットとして参戦しよう！</p>
+        <p>パイロットよ、ここは戦場なるぞ！複雑な機動戦術を決断し、敵の奇襲攻撃と多数の策略に対抗する準備は出来ているか？</p>
+        <p>敵ロボットを撃破し、全てのビーコンを奪い取り、ロボットをアップグレードして機体の火力、機動力、耐久性を強化しよう。各マップで自機の能力を発揮し、様々な戦略と戦術を用いてバトルに勝利せよ！</p>
+        
+        <hr>
+          
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href="http://m.onelink.me/6362e190" target="_blank">
+                    <img src="http://image-glb.qpyou.cn/markup/event/smonwar_jp2/cv_btn_googleplay.png" width="199" height="60" alt="Googleplayで手に入れよう" data-pin-nopin="true">
+                </a>
+                <a href="http://m.onelink.me/48b086c4" target="_blank">
+                    <img src="http://image-glb.qpyou.cn/markup/event/smonwar_jp2/cv_btn_appstore.png" width="199" height="60" alt="AppStoreからダウンロード" data-pin-nopin="true">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+  <p class="text-center" ><a href="http://masasikatano.html-5.me">masasikatano</a> <%= Time.now.year %></p>
+</footer>

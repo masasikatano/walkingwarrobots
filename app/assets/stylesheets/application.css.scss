@@ -1,0 +1,83 @@
+@import "bootstrap";
+/*
+ *= require bootstrap-table
+ */
+body { padding-top: 30px; }
+
+a {
+    font-weight: bold;
+    color: #3b3a36;
+    text-decoration:none;
+}
+a:hover {
+    opacity: 0.2;
+}
+
+hr {
+  height: 10px;
+  background-image: linear-gradient(-45deg,
+    hsla(0, 0%, 70%, 0),
+    hsla(0, 0%, 70%, 0) 25%,
+    hsla(0, 0%, 70%, 1) 25%,
+    hsla(0, 0%, 70%, 1) 50%,
+    hsla(0, 0%, 70%, 0) 50%,
+    hsla(0, 0%, 70%, 0) 75%,
+    hsla(0, 0%, 70%, 1) 75%);
+  background-size: 10px 10px;
+  width: 80%;
+}
+
+header {
+    background-image:url('/images/main.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding: 80px;
+    color: #E6E6E6;
+    text-shadow: 0px 0px 3px #000;
+    
+    h1 {
+        font-size: 400%;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 300%;
+        font-weight: bold;
+    }
+}
+
+caption {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.table-inverse {
+    color: #eceeef;
+    background-color: #373a3c;
+    a {
+        font-size: 200%;
+        font-weight: bold;
+        text-decoration:none;
+        color: #eceeef;
+    }
+    a:hover {
+        opacity: 0.7;
+    }
+}
+
+p.detail {
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.promotion {
+    background: #575756;
+    color: #E5E5E4;
+    margin: 40px 0 0 0;
+    padding: 40px;
+}
+
+footer {
+    background: #B8B8B8;
+    color: #6A6A6A;
+    padding: 20px 0 10px 0;
+}
