@@ -6,5 +6,8 @@ module ApplicationHelper
     else
       "#{page_title} | #{base_title}"
     end
-  end    
+  end
+  def format_time(time)
+    time.strftime("%Y-%m-%d %H:%M:%S")
+  end
 end

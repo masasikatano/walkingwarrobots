@@ -1,6 +1,32 @@
-<h1>Weapons</h1>
-<ul>
-      <% @weapons.each do |weapon|%>
-      <li><%= link_to weapon.name, weapon_path(weapon.id) %></li>
-      <% end %>
-</ul>
+<% provide(:title, "All WEAPONS 全ロボット一覧") %>
+
+<section class="bs-example container">
+    <div class="table-responsive"> 
+        <table class="table table-inverse">
+            <caption>全 WEAPONS ランキング</caption>
+            <thead>
+                <tr>
+                    <th width="20%">武器名</th>
+                    <th>クラス</th>
+                    <th>ダメージ最大</th>
+                    <th>サイクルDPS最大</th>
+                    <th>評価</th>
+                </tr>
+            </thead>
+            <tbody>
+            　　<% @weapons.each do |weapon|%>
+            　　<tr>
+                    <td style="background-image: url(/images/weapons/t<%= weapon.id %>.png);background-repeat: no-repeat;">
+                      <%= link_to weapon.name, robot_path(weapon.id) %><br>
+                      <%= weapon.namejp %>
+                    </td>
+                    <td><%= weapon.weapon_class %></td>
+                    <td><%= weapon.damage_max %></td>
+                    <td><%= weapon.cycle_dps_max %></td>
+                    <td><%= weapon.rating %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</section>

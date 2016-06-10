@@ -9,7 +9,56 @@
 </head>
 <body>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">WWRR - Walking War Robots Ranking</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "All ROBOTS", robots_path %>
+        <li><%= link_to "All WEAPONS", weapons_path %>
+    </ul>
+  </div><!-- /.container-fluid -->
+</nav>
+
 <%= yield %>
+
+<section class="promotion">
+    <div class="container">
+        <h2 class="text-center">Walking War Robots について</h2>
+        <hr>
+        
+        <p>Walking War Robots は6対6のチーム戦をリアルタイムで繰り広げる、アクション満載のマルチプレイヤーゲームです！</p>
+        <p>鋼鉄ロボットとして参戦しよう！</p>
+        <p>パイロットよ、ここは戦場なるぞ！複雑な機動戦術を決断し、敵の奇襲攻撃と多数の策略に対抗する準備は出来ているか？</p>
+        <p>敵ロボットを撃破し、全てのビーコンを奪い取り、ロボットをアップグレードして機体の火力、機動力、耐久性を強化しよう。各マップで自機の能力を発揮し、様々な戦略と戦術を用いてバトルに勝利せよ！</p>
+        
+        <hr>
+          
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href="http://m.onelink.me/6362e190" target="_blank">
+                    <img src="/images/btn_googleplay.png" alt="Googleplayで手に入れよう">
+                </a>
+                <a href="http://m.onelink.me/48b086c4" target="_blank">
+                    <img src="/images/btn_appstore.png" alt="AppStoreからダウンロード">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+  <p class="text-center" ><a href="http://masasikatano.html-5.me">masasikatano</a> <%= Time.now.year %></p>
+</footer>
 
 </body>
 </html>       

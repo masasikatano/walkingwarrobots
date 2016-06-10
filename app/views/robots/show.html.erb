@@ -1,28 +1,113 @@
-<h1>Robot</h1>
-<h2><%= @robot.name %></h2>
+<% provide(:title, @robot.name + "(" + @robot.namejp  + ")のユーザ評価は" + @robot.rating.to_s + "点") %>
 
-<h3>Posts</h3>
-<ul>
-      <% @robotPosts.each do |post|%>
-      <li><%= post.post %></li>
-      <% end %>
-</ul>
+<section class="robot bs-example">
+    <div class="container">
+        <div class="col-sm-6" style="background-image:url(/images/robots/<%= @robot.id %>.png);background-repeat:no-repeat">
+            <h1><%= @robot.name %></h1>
+            <h2><%= @robot.namejp %></h2>
+        </div>
+        <table class="table table-inverse">
+            <tr>
+                <th>HP 初期値</th>
+                <td><%= number_with_delimiter(@robot.hp) %></td>
+            </tr>
+            <tr>
+                <th>HP 最大</th>
+                <td><%= number_with_delimiter(@robot.hp_max) %></td>
+            </tr>
+            <tr>
+                <th>Speed 初期値</th>
+                <td><%= number_with_delimiter(@robot.speed) %> km</td>
+            </tr>
+            <tr>
+                <th>Speed 最大</th>
+                <td><%= number_with_delimiter(@robot.speed_max) %> km</td>
+            </tr>
+            <tr>
+                <th class="col-sm-3">必要レベル</th>
+                <td class="col-sm-3"><%= @robot.required_level %></td>
+            </tr>
+            <tr>
+                <th>AG</th>
+                <td><%= number_with_delimiter(@robot.price_ag) %></td>
+            </tr>
+            <tr>
+                <th>AU</th>
+                <td><%= number_with_delimiter(@robot.price_au) %></td>
+            </tr>
+            <tr>
+                <th>WSP</th>
+                <td><%= number_with_delimiter(@robot.price_wsp) %></td>
+            </tr>
+            <tr>
+                <th>スロット1</th>
+                <td><%= @robot.slot1 %></td>
+            </tr>
+            <tr>
+                <th>スロット2</th>
+                <td><%= @robot.slot2 %></td>
+            </tr>
+            <tr>
+                <th>スロット3</th>
+                <td><%= @robot.slot3 %></td>
+            </tr>
+            <tr>
+                <th>スロット4</th>
+                <td><%= @robot.slot4 %></td>
+            </tr>
+            <tr>
+                <th>能力</th>
+                <td><%= @robot.ability %></td>
+            </tr>
+            <tr>
+                <th>備考</th>
+                <td><%= @robot.note %></td>
+            </tr>
+            <tr>
+                <th>評価</th>
+                <td><%= @robot.rating %></td>
+            </tr>
+        </table>
+    </div>
+</section>
 
-<h3>Add New Post</h3>
-
-<%= form_for @robotPost do |f| %>
-
-<p>
-    <%= f.label :post %><br>
-    <%= f.text_field :post %>
-</p>
-<p>
-    <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
-</p>
-<p>
-    <%= f.hidden_field :robot_id, :value => @robot.id %>
-    <%= f.submit %>
-</p>
-
-<% end %>
+<section class="post bs-example container">
+    <h2><%= @robot.name %>(<%= @robot.namejp %>)の評価とレビュー</h2>
+    
+    <hr>
+    
+    <% @robotPosts.each do |post|%>
+    <div class="row">
+        <div class="col-sm-2">
+            評価 <%= post.rating %> 点
+        </div>
+        <div class="col-sm-8">
+            <%= post.post %>
+        </div>
+        <div class="col-sm-2">
+            <%= format_time(post.created_at) %>
+        </div>
+    </div>
+    <hr>
+    <% end %>
+    
+    <h2><%= @robot.name %>(<%= @robot.namejp %>)を評価する</h2>
+    
+    <%= form_for @robotPost do |f| %>
+    <div class="row">
+        <div class="col-sm-2">
+            <%= f.select :rating, {"評価の点数" => "", "0" => "0", "1" => "1", "2" => "2", "3" => "3", "4" => "4", "5" => "5"} %>
+        </div>
+        <div class="col-sm-8">
+            
+            <%= f.text_area :post, :size => "80x6" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <%= f.hidden_field :robot_id, :value => @robot.id %>
+            <%= f.submit "評価する" %>
+        </div>
+    </div>
+    <% end %>
+</section>

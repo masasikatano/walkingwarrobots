@@ -1,6 +1,34 @@
-<h1>Robots</h1>
-<ul>
-      <% @robots.each do |robot|%>
-      <li><%= link_to robot.name, robot_path(robot.id) %></li>
-      <% end %>
-</ul>
+<% provide(:title, "All ROBOTS 全ロボット一覧") %>
+
+<section class="bs-example container">
+    <div class="table-responsive"> 
+        <table class="table table-inverse">
+            <caption>全 ROBOTS ランキング</caption>
+            <thead>
+                <tr>
+                    <th width="20%">機体名</th>
+                    <th>HP最大</th>
+                    <th>SP最大</th>
+                    <th>スロット</th>
+                    <th>能力</th>
+                    <th>評価</th>
+                </tr>
+            </thead>
+            <tbody>
+            　　<% @robots.each do |robot|%>
+            　　<tr>
+                    <td style="background-image: url(/images/robots/t<%= robot.id %>.png);background-repeat: no-repeat;">
+                      <%= link_to robot.name, robot_path(robot.id) %><br>
+                      <%= robot.namejp %>
+                    </td>
+                    <td><%= number_with_delimiter(robot.hp_max) %></td>
+                    <td><%= number_with_delimiter(robot.speed_max) %>km</td>
+                    <td><%= robot.slot %></td>
+                    <td><%= robot.ability %></td>
+                    <td><%= robot.rating %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</section>
