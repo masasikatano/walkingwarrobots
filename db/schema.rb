@@ -14,72 +14,72 @@
 ActiveRecord::Schema.define(version: 20160607093847) do
 
   create_table "robot_posts", force: :cascade do |t|
-    t.integer  "robot_id"
-    t.float    "rating"
-    t.text     "post"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "robot_id",   limit: 4
+    t.float    "rating",     limit: 24
+    t.text     "post",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "robots", force: :cascade do |t|
-    t.string   "name"
-    t.string   "namejp"
-    t.integer  "required_level"
-    t.integer  "price_ag"
-    t.integer  "price_au"
-    t.integer  "price_wsp"
-    t.string   "robot_class"
-    t.integer  "hp"
-    t.integer  "hp_max"
-    t.integer  "speed"
-    t.integer  "speed_max"
-    t.string   "slot"
-    t.string   "slot1"
-    t.string   "slot2"
-    t.string   "slot3"
-    t.string   "slot4"
-    t.string   "ability"
-    t.text     "note"
-    t.float    "rating"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "name",           limit: 255
+    t.string   "namejp",         limit: 255
+    t.integer  "required_level", limit: 4
+    t.integer  "price_ag",       limit: 4
+    t.integer  "price_au",       limit: 4
+    t.integer  "price_wsp",      limit: 4
+    t.string   "robot_class",    limit: 255
+    t.integer  "hp",             limit: 4
+    t.integer  "hp_max",         limit: 4
+    t.integer  "speed",          limit: 4
+    t.integer  "speed_max",      limit: 4
+    t.string   "slot",           limit: 255
+    t.string   "slot1",          limit: 255
+    t.string   "slot2",          limit: 255
+    t.string   "slot3",          limit: 255
+    t.string   "slot4",          limit: 255
+    t.string   "ability",        limit: 255
+    t.text     "note",           limit: 65535
+    t.float    "rating",         limit: 24
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "weapon_posts", force: :cascade do |t|
-    t.integer  "weapon_id"
-    t.float    "rating"
-    t.text     "post"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "weapon_id",  limit: 4
+    t.float    "rating",     limit: 24
+    t.text     "post",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "weapons", force: :cascade do |t|
-    t.string   "name"
-    t.string   "namejp"
-    t.integer  "required_level"
-    t.integer  "price_ag"
-    t.integer  "price_au"
-    t.integer  "price_wsp"
-    t.string   "weapon_class"
-    t.string   "weapon_type"
-    t.integer  "damage"
-    t.integer  "damage_max"
-    t.integer  "hp"
-    t.integer  "hp_max"
-    t.string   "shooting_range"
-    t.string   "rounds"
-    t.float    "rps"
-    t.float    "reload_sec"
-    t.float    "whole_rounds_sec"
-    t.float    "cycle_sec"
-    t.float    "cycle_damage"
-    t.float    "cycle_damage_max"
-    t.float    "cycle_dps"
-    t.float    "cycle_dps_max"
-    t.text     "note"
-    t.float    "rating"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "name",             limit: 255
+    t.string   "namejp",           limit: 255
+    t.integer  "required_level",   limit: 4
+    t.integer  "price_ag",         limit: 4
+    t.integer  "price_au",         limit: 4
+    t.integer  "price_wsp",        limit: 4
+    t.string   "weapon_class",     limit: 255
+    t.string   "weapon_type",      limit: 255
+    t.integer  "damage",           limit: 4
+    t.integer  "damage_max",       limit: 4
+    t.integer  "hp",               limit: 4
+    t.integer  "hp_max",           limit: 4
+    t.string   "shooting_range",   limit: 255
+    t.integer  "rounds",           limit: 4
+    t.float    "rps",              limit: 24
+    t.float    "reload_sec",       limit: 24
+    t.float    "whole_rounds_sec", limit: 24
+    t.float    "cycle_sec",        limit: 24
+    t.float    "cycle_damage",     limit: 24
+    t.float    "cycle_damage_max", limit: 24
+    t.float    "cycle_dps",        limit: 24
+    t.float    "cycle_dps_max",    limit: 24
+    t.text     "note",             limit: 65535
+    t.float    "rating",           limit: 24
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end

@@ -14,7 +14,7 @@ class CreateWeapons < ActiveRecord::Migration
       t.integer :hp
       t.integer :hp_max
       t.string :shooting_range
-      t.string :rounds
+      t.integer :rounds
       t.float :rps
       t.float :reload_sec
       t.float :whole_rounds_sec
