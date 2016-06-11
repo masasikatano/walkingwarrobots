@@ -22,13 +22,19 @@
                       <%= robot.namejp %>
                     </td>
                     <td><%= number_with_delimiter(robot.hp_max) %></td>
-                    <td><%= number_with_delimiter(robot.speed_max) %>km</td>
+                    <td><%= number_with_delimiter(robot.speed_max) %> km</td>
                     <td><%= robot.slot %></td>
                     <td><%= robot.ability %></td>
-                    <td><%= robot.rating %></td>
+                    <td><%= robot.rating.round(2) %></td>
                 </tr>
                 <% end %>
             </tbody>
         </table>
     </div>
+    <small>
+        <p class="anotasion">* 「 HP最大 」は最大までロボットを強化した時の HP( ヒットポイント ) の値</p>
+        <p class="anotasion">* 「 SP最大 」は最大までロボットを強化した時の SP( スピード ) の値</p>
+        <p class="anotasion">* 小数点以下2桁までは四捨五入</p>
+        <p class="anotasion">* 評価は10点満点</p>
+    </small>
 </section>

@@ -9,7 +9,7 @@
 <section class="bs-example container">
     <div class="table-responsive"> 
         <table class="table table-inverse">
-            <caption>ROBOTS TOP 3</caption>
+            <caption>ROBOTS TOP 5</caption>
             <thead>
                 <tr>
                     <th width="20%">機体名</th>
@@ -28,15 +28,21 @@
                       <%= robot.namejp %>
                     </td>
                     <td><%= number_with_delimiter(robot.hp_max) %></td>
-                    <td><%= number_with_delimiter(robot.speed_max) %>km</td>
+                    <td><%= number_with_delimiter(robot.speed_max) %> km</td>
                     <td><%= robot.slot %></td>
                     <td><%= robot.ability %></td>
-                    <td><%= robot.rating %></td>
+                    <td><%= robot.rating.round(2) %></td>
                 </tr>
                 <% end %>
             </tbody>
         </table>
-    </div>
+	</div>
+    <small>
+        <p class="anotasion">* 「 HP最大 」は最大までロボットを強化した時の HP( ヒットポイント ) の値</p>
+        <p class="anotasion">* 「 SP最大 」は最大までロボットを強化した時の SP( スピード ) の値</p>
+        <p class="anotasion">* 小数点以下2桁までは四捨五入</p>
+        <p class="anotasion">* 評価は10点満点</p>
+    </small>
     <p class="detail text-center"><%= link_to "すべての ROBOTS を見る", robots_path %></p>
 </section>
 
@@ -45,7 +51,7 @@
 <section class="bs-example container">
     <div class="table-responsive"> 
         <table class="table table-inverse">
-            <caption>WEAPONS TOP 3</caption>
+            <caption>WEAPONS TOP 5</caption>
             <thead>
                 <tr>
                     <th width="20%">武器名</th>
@@ -63,13 +69,20 @@
                       <%= weapon.namejp %>
                     </td>
                     <td><%= weapon.weapon_class %></td>
-                    <td><%= weapon.damage_max %></td>
-                    <td><%= weapon.cycle_dps_max %></td>
-                    <td><%= weapon.rating %></td>
+                    <td><%= number_with_delimiter(weapon.damage_max) %></td>
+                    <td><%= number_with_delimiter(weapon.cycle_dps_max.round(2)) %></td>
+                    <td><%= weapon.rating.round(2) %></td>
                 </tr>
                 <% end %>
             </tbody>
         </table>
     </div>
+    <small>
+        <p class="anotasion text-left">* 「 サイクルDPS 」は武器を全段撃ちつくし、そのリロードが完了する間にかかる時間を、与えるダメージで乗算した値</p>
+        <p class="anotasion text-left">* 「 ダメージ最大 」は最大まで武器を強化した時の値</p>
+        <p class="anotasion text-left">* 「 サイクルDPS最大 」は最大まで武器を強化した時の値</p>
+        <p class="anotasion text-left">* 小数点以下2桁までは四捨五入</p>
+        <p class="anotasion text-left">* 評価は10点満点</p>
+    </small>
     <p class="detail text-center"><%= link_to "すべての WEAPONS を見る", weapons_path %></p>
 </section>

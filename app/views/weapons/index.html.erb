@@ -17,16 +17,23 @@
             　　<% @weapons.each do |weapon|%>
             　　<tr>
                     <td style="background-image: url(/images/weapons/t<%= weapon.id %>.png);background-repeat: no-repeat;">
-                      <%= link_to weapon.name, robot_path(weapon.id) %><br>
+                      <%= link_to weapon.name, weapon_path(weapon.id) %><br>
                       <%= weapon.namejp %>
                     </td>
                     <td><%= weapon.weapon_class %></td>
-                    <td><%= weapon.damage_max %></td>
-                    <td><%= weapon.cycle_dps_max %></td>
-                    <td><%= weapon.rating %></td>
+                    <td><%= number_with_delimiter(weapon.damage_max) %></td>
+                    <td><%= number_with_delimiter(weapon.cycle_dps_max.round(2)) %></td>
+                    <td><%= weapon.rating.round(2) %></td>
                 </tr>
                 <% end %>
             </tbody>
         </table>
     </div>
+    <small>
+        <p class="anotasion text-left">* 「 サイクルDPS 」は武器を全段撃ちつくし、そのリロードが完了する間にかかる時間を、与えるダメージで乗算した値</p>
+        <p class="anotasion text-left">* 「 ダメージ最大 」は最大まで武器を強化した時の値</p>
+        <p class="anotasion text-left">* 「 サイクルDPS最大 」は最大まで武器を強化した時の値</p>
+        <p class="anotasion text-left">* 小数点以下2桁までは四捨五入</p>
+        <p class="anotasion text-left">* 評価は10点満点</p>
+    </small>
 </section>

@@ -1,23 +1,200 @@
-<h1>Weapon</h1>
-<h2><%= @weapon.name %></h2>
-<h3>Posts</h3>
-<ul>
-      <% @weaponPosts.each do |post|%>
-      <li><%= post.post %></li>
-      <% end %>
-</ul>
-<h3>Add New Post</h3>
-<%= form_for @weaponPost do |f| %>
-<p>
-    <%= f.label :post %><br>
-    <%= f.text_field :post %>
-</p>
-<p>
-    <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
-</p>
-<p>
-    <%= f.hidden_field :weapon_id, :value => @weapon.id %>
-    <%= f.submit %>
-</p>
-<% end %>
+<% provide(:title, @weapon.name + "(" + @weapon.namejp  + ")のユーザ評価は" + @weapon.rating.to_s + "点") %>
+
+<section class="image bs-example">
+    <div class="container">
+        <div class="col-sm-6" style="background-image:url(/images/weapons/<%= @weapon.id %>.png);background-repeat:no-repeat">
+            <h1><%= @weapon.name %></h1>
+            <h2><%= @weapon.namejp %></h2>
+        </div>
+        <table class="table table-inverse">
+            <tr>
+                <th class="col-sm-3">評価</th>
+                <td class="col-sm-3"><%= @weapon.rating.round(2) %></td>
+            </tr>
+            <% if @weapon.damage != 0 %>
+            <tr>
+                <th>ダメージ</th>
+                <td><%= number_with_delimiter(@weapon.damage) %></td>
+            </tr>
+            <% end %>
+            <% if @weapon.damage_max != 0 %>
+            <tr>
+                <th>ダメージ 最大</th>
+                <td><%= number_with_delimiter(@weapon.damage_max) %></td>
+            </tr>
+            <% end %>
+            <% if !@weapon.hp.nil? then %>
+            <tr>
+                <th>HP</th>
+                <td><%= number_with_delimiter(@weapon.hp) %></td>
+            </tr>
+            <% end %>
+            <% if !@weapon.hp_max.nil? then %>
+            <tr>
+                <th>HP 最大</th>
+                <td><%= number_with_delimiter(@weapon.hp_max) %></td>
+            </tr>
+            <% end %>
+            <% if !@weapon.shooting_range.nil? then %>
+            <tr>
+                <th>射程</th>
+                <td><%= @weapon.shooting_range %> m</td>
+            </tr>
+            <% end %>
+            <tr>
+                <th>装弾数</th>
+                <td><%= @weapon.rounds %> 発</td>
+            </tr>
+            <% if @weapon.rps != 0 %>
+            <tr>
+                <th>RPS ( 1秒間の発射数 )</th>
+                <td><%= number_with_delimiter(@weapon.rps.round(2)) %></td>
+            </tr>
+            <% end %>
+            <% if @weapon.reload_sec != 0 %>
+            <tr>
+                <th>リロードにかかる時間</th>
+                <td><%= number_with_delimiter(@weapon.reload_sec.round(2)) %> 秒</td>
+            </tr>
+            <% end %>
+            <tr>
+                <th>全弾発射にかかる時間</th>
+                <td><%= @weapon.whole_rounds_sec %> 秒</td>
+            </tr>
+            <% if @weapon.cycle_sec != 0 %>
+            <tr>
+                <th>1サイクルにかかる時間</th>
+                <td><%= number_with_delimiter(@weapon.cycle_sec.round(2)) %> 秒</td>
+            </tr>
+            <% end %>
+            <% if @weapon.cycle_damage != 0 %>
+            <tr>
+                <th>1サイクルダメージ合計</th>
+                <td><%= number_with_delimiter(@weapon.cycle_damage.round(2)) %></td>
+            </tr>
+            <% end %>
+            <% if @weapon.cycle_damage_max != 0 %>
+            <tr>
+                <th>1サイクルダメージ合計最大</th>
+                <td><%= number_with_delimiter(@weapon.cycle_damage_max.round(2)) %></td>
+            </tr>
+            <% end %>
+            <% if @weapon.cycle_dps != 0 %>
+            <tr>
+                <th>1サイクルDPS</th>
+                <td><%= number_with_delimiter(@weapon.cycle_dps.round(2)) %></td>
+            </tr>
+            <% end %>
+            <% if @weapon.cycle_dps_max != 0 %>
+            <tr>
+                <th>1サイクルDPS最大</th>
+                <td><%= number_with_delimiter(@weapon.cycle_dps_max.round(2)) %></td>
+            </tr>
+            <% end %>
+            <tr>
+                <th>必要 レベル</th>
+                <td><%= @weapon.required_level %></td>
+            </tr>
+            <% if !@weapon.price_ag.nil? then %>
+            <tr>
+                <th>必要 AG</th>
+                <td><%= number_with_delimiter(@weapon.price_ag) %></td>
+            </tr>
+            <% end %>
+            <% if !@weapon.price_au.nil? then %>
+            <tr>
+                <th>必要 AU</th>
+                <td><%= number_with_delimiter(@weapon.price_au) %></td>
+            </tr>
+            <% end %>
+            <% if !@weapon.price_wsp.nil? then %>
+            <tr>
+                <th>必要 WSP</th>
+                <td><%= number_with_delimiter(@weapon.price_wsp) %></td>
+            </tr>
+            <% end %>
+            <tr>
+                <th>武器クラス</th>
+                <td><%= @weapon.weapon_class %></td>
+            </tr>
+            <tr>
+                <th>武器タイプ</th>
+                <td><%= @weapon.weapon_type %></td>
+            </tr>
+            <tr>
+                <th>備考</th>
+                <td><%= @weapon.note %></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container">
+        <div class="row">
+            <small class=" col-sm-12">
+                <p class="anotasion text-right">* 「 サイクルDPS 」は武器を全段撃ちリロードが完了するまでの時間を、ダメージで割算した値</p>
+                <p class="anotasion text-right">* 「 サイクルDPS最大 」は最大まで武器を強化した時の値</p>
+                <p class="anotasion text-right">* 「 ダメージ最大 」は最大まで武器を強化した時の値</p>
+                <p class="anotasion text-right">* 小数点以下2桁までは四捨五入</p>
+                <p class="anotasion text-right">* 評価は10点満点</p>
+            </small>
+        </div>
+    </div>
+</section>
+
+<section class="post bs-example container">
+    <div class="row">
+        <div class=" col-sm-12">
+            <h2><%= @weapon.name %>(<%= @weapon.namejp %>)の評価とレビュー</h2>
+        </div>
+    </div>
+    <hr>
+    <% if @weaponPosts.empty? then %>
+        評価はまだ投稿されていません。
+        <hr>
+    <% else %>
+        <% @weaponPosts.each do |post|%>
+        <div class="row">
+            <div class="col-sm-2">
+                評価 <%= post.rating %> 点
+            </div>
+            <div class="col-sm-8">
+                <%= post.post %>
+            </div>
+            <div class="col-sm-2">
+                <%= format_time(post.created_at) %>
+            </div>
+        </div>
+        <hr>
+        <% end %>
+    <% end %>
+    
+    <h2><%= @weapon.name %>(<%= @weapon.namejp %>)を評価する</h2>
+    
+    <%= form_for @weaponPost do |f| %>
+    <div class="row">
+        <div class="col-sm-2">
+            <%= f.select :rating, {"評価の点数" => "", 
+                                        "10" => "10",
+                                        "9" => "9",
+                                        "8" => "8",
+                                        "7" => "7",
+                                        "6" => "6",
+                                        "5" => "5",
+                                        "4" => "4", 
+                                        "3" => "3", 
+                                        "2" => "2", 
+                                        "1" => "1", 
+                                        "0" => "0", 
+                                        } %>
+        </div>
+        <div class="col-sm-8">
+            <%= f.text_area :post, :size => "100x6" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <%= f.hidden_field :weapon_id, :value => @weapon.id %>
+            <%= f.submit "評価する" %>
+        </div>
+    </div>
+    <% end %>
+</section>

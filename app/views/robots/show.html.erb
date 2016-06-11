@@ -1,12 +1,16 @@
 <% provide(:title, @robot.name + "(" + @robot.namejp  + ")のユーザ評価は" + @robot.rating.to_s + "点") %>
 
-<section class="robot bs-example">
+<section class="image bs-example">
     <div class="container">
         <div class="col-sm-6" style="background-image:url(/images/robots/<%= @robot.id %>.png);background-repeat:no-repeat">
             <h1><%= @robot.name %></h1>
             <h2><%= @robot.namejp %></h2>
         </div>
         <table class="table table-inverse">
+            <tr>
+                <th class="col-sm-3">評価</th>
+                <td class="col-sm-3"><%= @robot.rating.round(2) %></td>
+            </tr>
             <tr>
                 <th>HP 初期値</th>
                 <td><%= number_with_delimiter(@robot.hp) %></td>
@@ -24,71 +28,124 @@
                 <td><%= number_with_delimiter(@robot.speed_max) %> km</td>
             </tr>
             <tr>
-                <th class="col-sm-3">必要レベル</th>
-                <td class="col-sm-3"><%= @robot.required_level %></td>
-            </tr>
-            <tr>
-                <th>AG</th>
-                <td><%= number_with_delimiter(@robot.price_ag) %></td>
-            </tr>
-            <tr>
-                <th>AU</th>
-                <td><%= number_with_delimiter(@robot.price_au) %></td>
-            </tr>
-            <tr>
-                <th>WSP</th>
-                <td><%= number_with_delimiter(@robot.price_wsp) %></td>
-            </tr>
-            <tr>
                 <th>スロット1</th>
-                <td><%= @robot.slot1 %></td>
+                <td>
+                    <% if !@robot.slot1.nil? then %>
+                    <%= @robot.slot1 %>
+                    <% else %>
+                    -
+                    <% end %>
+                </td>
             </tr>
             <tr>
                 <th>スロット2</th>
-                <td><%= @robot.slot2 %></td>
+                <td>
+                    <% if !@robot.slot2.nil? then %>
+                    <%= @robot.slot2 %>
+                    <% else %>
+                    -
+                    <% end %>
+                </td>
             </tr>
             <tr>
                 <th>スロット3</th>
-                <td><%= @robot.slot3 %></td>
+                <td>
+                    <% if !@robot.slot3.nil? then %>
+                    <%= @robot.slot3 %>
+                    <% else %>
+                    -
+                    <% end %>
+                </td>
             </tr>
             <tr>
                 <th>スロット4</th>
-                <td><%= @robot.slot4 %></td>
+                <td>
+                    <% if !@robot.slot4.nil? then %>
+                    <%= @robot.slot4 %>
+                    <% else %>
+                    -
+                    <% end %>
+                </td>
             </tr>
             <tr>
                 <th>能力</th>
-                <td><%= @robot.ability %></td>
+                <td>
+                    <% if !@robot.ability.nil? then %>
+                    <%= @robot.ability %>
+                    <% else %>
+                    -
+                    <% end %>
+                </td>
+            </tr>
+            <tr>
+                <th>必要 レベル</th>
+                <td><%= @robot.required_level %></td>
+            </tr>
+            <% if !@robot.price_ag.nil? then %>
+            <tr>
+                <th>必要 AG</th>
+                <td><%= number_with_delimiter(@robot.price_ag) %></td>
+            </tr>
+            <% end %>
+            <% if !@robot.price_au.nil? then %>
+            <tr>
+                <th>必要 AU</th>
+                <td><%= number_with_delimiter(@robot.price_au) %></td>
+            </tr>
+            <% end %>
+            <% if !@robot.price_wsp.nil? then %>
+            <tr>
+                <th>必要 WSP</th>
+                <td><%= number_with_delimiter(@robot.price_wsp) %></td>
+            </tr>
+            <% end %>
+            <tr>
+                <th>機体クラス</th>
+                <td><%= @robot.robot_class %></td>
             </tr>
             <tr>
                 <th>備考</th>
                 <td><%= @robot.note %></td>
             </tr>
-            <tr>
-                <th>評価</th>
-                <td><%= @robot.rating %></td>
-            </tr>
         </table>
+    </div>
+    <div class="container">
+        <div class="row">
+            <small class=" col-sm-12">
+                <p class="anotasion text-right">* 「 HP最大 」は最大までロボットを強化した時の HP( ヒットポイント ) の値</p>
+                <p class="anotasion text-right">* 「 SP最大 」は最大までロボットを強化した時の SP( スピード ) の値</p>
+                <p class="anotasion text-right">* 小数点以下2桁までは四捨五入</p>
+                <p class="anotasion text-right">* 評価は10点満点</p>
+            </small>
+        </div>
     </div>
 </section>
 
 <section class="post bs-example container">
-    <h2><%= @robot.name %>(<%= @robot.namejp %>)の評価とレビュー</h2>
-    
-    <hr>
-    
-    <% @robotPosts.each do |post|%>
     <div class="row">
-        <div class="col-sm-2">
-            評価 <%= post.rating %> 点
-        </div>
-        <div class="col-sm-8">
-            <%= post.post %>
-        </div>
-        <div class="col-sm-2">
-            <%= format_time(post.created_at) %>
+        <div class=" col-sm-12">
+            <h2><%= @robot.name %>(<%= @robot.namejp %>)の評価とレビュー</h2>
         </div>
     </div>
     <hr>
+    <% if @robotPosts.empty? then %>
+        評価はまだ投稿されていません。
+        <hr>
+    <% else %>
+        <% @robotPosts.each do |post|%>
+        <div class="row">
+            <div class="col-sm-2">
+                評価 <%= post.rating %> 点
+            </div>
+            <div class="col-sm-8">
+                <%= post.post %>
+            </div>
+            <div class="col-sm-2">
+                <%= format_time(post.created_at) %>
+            </div>
+        </div>
+        <hr>
+        <% end %>
     <% end %>
     
     <h2><%= @robot.name %>(<%= @robot.namejp %>)を評価する</h2>
@@ -96,11 +153,22 @@
     <%= form_for @robotPost do |f| %>
     <div class="row">
         <div class="col-sm-2">
-            <%= f.select :rating, {"評価の点数" => "", "0" => "0", "1" => "1", "2" => "2", "3" => "3", "4" => "4", "5" => "5"} %>
+            <%= f.select :rating, {"評価の点数" => "", 
+                                        "10" => "10",
+                                        "9" => "9",
+                                        "8" => "8",
+                                        "7" => "7",
+                                        "6" => "6",
+                                        "5" => "5",
+                                        "4" => "4", 
+                                        "3" => "3", 
+                                        "2" => "2", 
+                                        "1" => "1", 
+                                        "0" => "0", 
+                                        } %>
         </div>
         <div class="col-sm-8">
-            
-            <%= f.text_area :post, :size => "80x6" %>
+            <%= f.text_area :post, :size => "100x6" %>
         </div>
     </div>
     <div class="row">
