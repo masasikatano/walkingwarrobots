@@ -65,7 +65,7 @@
             　　<% @weapons.each do |weapon|%>
             　　<tr>
                     <td style="background-image: url(/images/weapons/t<%= weapon.id %>.png);background-repeat: no-repeat;">
-                      <%= link_to weapon.name, robot_path(weapon.id) %><br>
+                      <%= link_to weapon.name, weapon_path(weapon.id) %><br>
                       <%= weapon.namejp %>
                     </td>
                     <td><%= weapon.weapon_class %></td>
