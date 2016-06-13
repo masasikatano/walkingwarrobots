@@ -12,10 +12,10 @@ default: &default
 development:
     adapter: mysql2
     encoding: utf8
-    database: masasika_wwr
-    username: masasika_root
-    password: masa1234
-    host: 127.0.0.1
+    database: w
+    username: admingWTud3W
+    password: DE37bC9gpNlQ
+    host: 127.6.92.2
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
