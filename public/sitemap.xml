@@ -1,20 +1,327 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-  <loc>http://imake.html-5.me/</loc>
-  <lastmod>2016-06-13</lastmod>
+  <loc>https://walkingwarrobots.herokuapp.com/</loc>
+  <lastmod>2016-06-10</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>
 
 <url>
-  <loc>http://imake.html-5.me/2016/06/heroku-on-ruby</loc>
-  <lastmod>2016-06-13</lastmod>
-  <changefreq>weekly</changefreq> 
+  <loc>https://walkingwarrobots.herokuapp.com/robots</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.1</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.1</priority>
+</url>
+
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/1</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
   <priority>0.2</priority>
 </url>
 
-</urlset> 
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/2</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/3</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/4</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/5</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/6</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/7</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/8</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/9</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/10</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/11</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/12</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/13</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/14</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/15</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/16</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/17</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/robots/18</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/1</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/2</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/3</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/4</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/5</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/6</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/7</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/8</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/9</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/10</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/11</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/12</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/13</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/14</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/15</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/16</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/17</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/18</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/19</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/20</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/21</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/22</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/23</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/24</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+<url>
+  <loc>https://walkingwarrobots.herokuapp.com/weapons/25</loc>
+  <lastmod>2016-06-10</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+
+</urlset>
